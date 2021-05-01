@@ -8,13 +8,13 @@
  * License: BSD 3-Clause
  *
  * Nick Schwarzenberg,
- * 12/2015, v0.1.0α UNRELEASED
+ * 12/2015, v0.2.0
  */
 
 
 // include these dependencies also in your top-level .ino
 #include <Arduino.h>
-#include <FastPin.h>
+#include <FastDigitalPin.h> // https://github.com/bitfasching/FastDigitalPin
 #include <SPI.h>
 
 // prevent redefinitions
@@ -44,8 +44,8 @@ class M25P
             bulkErase = 0xC7;
         } Command;
 
-        // FastPin instance for SPI slave select pin
-        FastPin SelectPin;
+        // FastDigitalPin instance for SPI slave select pin
+        FastDigitalPin SelectPin;
 
         // SPI setup methods
         void beginSPI();
